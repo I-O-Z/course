@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background: url('https://images.ast.ru/upload/iblock/d50/El_Bukva_W.jpg')">
+<div>
+    <p>Название: {{ book.name }}</p>
+    <p>Описание: {{ book.description }}</p>
+    <p>Цена: {{ book.price }}</p>
+    <p>Дата публикации: {{ book.date_create }}</p>
+    <p>Количество страниц: {{ book.count_page }}</p>
+    <p>Размеры: {{ book.cover_size }}</p>
+    <p>Исполнение обложки: {{ book.cover_type }}</p>
+
+
+
+</div>
+<p style="padding-left: 30px">
+    <a href="{% url 'books_list' %}" class="btn btn-info">Назад</a>
+</p>
+</body>
+</html>

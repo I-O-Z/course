@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body style="padding-left: 7px; background: url('https://images.ast.ru/upload/iblock/d50/El_Bukva_W.jpg')">
+
+{% block title %}
+    <div>
+        <h2>
+            {{ user_greeting }}
+        </h2>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    <a href="{%  url 'books_list' %}">Список доступных книг.</a> <br>
+    <a href="{%  url 'not_ready' %}">Еще какая-нибудь ссылка.</a> <br>
+
+{% endblock %}
+
+</body>
+</html>

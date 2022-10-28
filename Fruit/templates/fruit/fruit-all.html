@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Список фруктов</h1>
+
+        <a class="btn btn-primary" href="{% url 'index_Fruit' %}">Назад</a> <br>
+        <a class="btn btn-success" href="{% url 'add_fruit' %}">Добавить фрукт</a>
+
+        <div>
+            {% for item in fruit_list %}
+
+                <div class="card" style="width: 18rem;">
+                    {# <img src="{{ item.photo }}" class="card-img-top" alt="..."> #}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <p class="card-text">{{ item.date_create|date:"Y-m-d l" }}</p>
+                        <a href="{% url 'one_fruit' item.pk %} " class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
